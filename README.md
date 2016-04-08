@@ -27,10 +27,6 @@ Files are symlinked into the proper location, and have the `.` added. For exampl
 - To have gems installed with each version of ruby add each to `rbenv/default-gems`
 - Run `make ruby`
 
-### osx defaults
-- Amend defaults as required in `scipts/.osx`
-- Run `make osx`
-
 ## Updating
 You can run `make` at any time to keep things nice and tidy.
 

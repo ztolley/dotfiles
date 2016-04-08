@@ -11,7 +11,6 @@ symlinks:
 	@ln -sf $(DIR)/bash/functions ~/.functions
 	@ln -sf $(DIR)/bash/path ~/.path
 	@ln -sf $(DIR)/bash/git-completion.bash ~/.git-completion.bash
-	@ln -nsf $(DIR)/bin ~/bin
 	@ln -sf $(DIR)/linter/jshintrc ~/.jshintrc
 	@ln -sf $(DIR)/linter/scss-lint.yml ~/.scss-lint.yml
 	@ln -sf $(DIR)/git/gitconfig ~/.gitconfig
@@ -32,8 +31,5 @@ ruby:
 	[ -d ~/.rbenv/versions/$(LATEST_RUBY) ] || rbenv install $(LATEST_RUBY)
 	rbenv global $(LATEST_RUBY)
 
-osx:
-	sh $(DIR)/scripts/.osx
-
 node: brew
-	npm install -g gulp-cli
+	npm install -g gulp-cli browser-sync mocha nodemon
