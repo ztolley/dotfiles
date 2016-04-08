@@ -25,7 +25,7 @@ ensure_brew:
 
 brew: ensure_brew
 	brew tap Homebrew/bundle
-	brew tap caskroom/cask
+	brew tap Caskroom/cask
 	brew bundle
 
 ruby:
