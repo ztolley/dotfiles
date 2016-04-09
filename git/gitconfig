@@ -119,7 +119,7 @@
 
 [core]
   excludesfile = ~/.gitignore_global
-  editor = atom -n -w
+	editor = nano
 
 [difftool "sourcetree"]
 	cmd = /usr/local/bin/ksdiff -w \"$LOCAL\" \"$REMOTE\"
