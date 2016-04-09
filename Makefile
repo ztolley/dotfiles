@@ -1,5 +1,6 @@
 DIR=$(HOME)/dotfiles
 LATEST_RUBY="2.2.4"
+NVM_DIR=$(HOME)/.nvm
 
 all: brew node ruby symlinks
 
@@ -19,6 +20,15 @@ symlinks:
 	@ln -nsf $(DIR)/bundle ~/.bundle
 	@ln -sf $(DIR)/rbenv/default-gems ~/.rbenv/default-gems
 
+
+nvm:
+	curl https://raw.githubusercontent.com/creationix/nvm/v0.31.0/install.sh | NVM_DIR=$(NVM_DIR) PROFILE=$(HOME)/.bash_profile sh
+	source $(NVM_DIR)/nvm.sh && nvm install 0.12
+	source $(NVM_DIR)/nvm.sh && nvm install 4
+	source $(NVM_DIR)/nvm.sh && nvm install 5
+	source $(NVM_DIR)/nvm.sh && nvm alias default 4
+
+	
 ensure_brew:
 	sh $(DIR)/scripts/ensure_homebrew.sh
 
@@ -31,5 +41,5 @@ ruby:
 	[ -d ~/.rbenv/versions/$(LATEST_RUBY) ] || rbenv install $(LATEST_RUBY)
 	rbenv global $(LATEST_RUBY)
 
-node: brew
-	npm install -g gulp-cli browser-sync mocha nodemon
+node: nvm
+	ruby $(DIR)/scripts/npm_bundles.rb
