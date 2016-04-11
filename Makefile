@@ -26,7 +26,7 @@ nvm:
 	source $(NVM_DIR)/nvm.sh && nvm install 0.12
 	source $(NVM_DIR)/nvm.sh && nvm install 4
 	source $(NVM_DIR)/nvm.sh && nvm install 5
-	source $(NVM_DIR)/nvm.sh && nvm alias default 4
+	source $(NVM_DIR)/nvm.sh && nvm alias default 5
 
 	
 ensure_brew:
