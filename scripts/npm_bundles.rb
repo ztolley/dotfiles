@@ -12,6 +12,8 @@ npms = {
   "mocha" => "",
   "nodemon" => "",
   "phantomjs" => "",
+  "react-native-cli" => "",
+  "webpack" => ""
 }
 
 npms.each do |mod, command|

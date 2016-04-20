@@ -33,6 +33,9 @@ fi
 # load rbenv
 if which rbenv > /dev/null; then eval "$(rbenv init -)"; fi
 
+# load autoenv
+source /usr/local/opt/autoenv/activate.sh
+
 export NVM_DIR="/Users/ztolley/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && . "$NVM_DIR/nvm.sh"  # This loads nvm
 [[ -r $NVM_DIR/bash_completion ]] && . $NVM_DIR/bash_completion
